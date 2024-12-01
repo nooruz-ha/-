@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить товар в ломбард</title>
+    <link rel="stylesheet" href="style.css">
+        
+</head>
+<body>
+
+
+<input type="image" src="deneg.jpg" alt="Отправить" class="round-image-button">
+
+<form action="server-url" method="post" enctype="multipart/form-data">
+    <h2>Добавить товар в ломбард</h2>
+
+    <label for="item-name">Название товара</label>
+    <input type="text" id="item-name" name="item_name" required>
+
+    <label for="item-category">Категория товара</label>
+    <input type="text" id="item-category" name="item_category" required>
+
+    <label for="item-price">Оценочная стоимость (сом)</label>
+    <input type="number" id="item-price" name="item_price" required>
+
+    <label for="owner-name">ФИО владельца</label>
+    <input type="text" id="owner-name" name="owner_name" required>
+
+    <label for="owner-phone">Телефон владельца</label>
+    <input type="text" id="owner-phone" name="owner_phone" required>
+
+    <label for="email">Email владельца</label>
+    <input type="email" id="email" name="email" required>
+
+    <label>Состояние товара</label>
+    <div class="group">
+        <input type="radio" id="new" name="condition" value="new" required>
+        <label for="new">Новый</label><br>
+        <input type="radio" id="used" name="condition" value="used">
+        <label for="used">Б/У</label><br>
+        <input type="radio" id="damaged" name="condition" value="damaged">
+        <label for="damaged">Поврежден</label>
+    </div>
+
+    <label>Дополнительные опции:</label>
+    <div class="group">
+        <input type="checkbox" id="certificate" name="options" value="certificate">
+        <label for="certificate">Есть сертификат</label><br>
+        <input type="checkbox" id="guarantee" name="options" value="guarantee">
+        <label for="guarantee">Гарантия</label><br>
+        <input type="checkbox" id="box" name="options" value="box">
+        <label for="box">Оригинальная упаковка</label>
+    </div>
+
+    <label for="file">Добавить фото товара</label>
+    <input type="file" id="file" name="item_photo" required>
+
+    <label for="comments">Дополнительные комментарии:</label>
+    <textarea id="comments" name="comments" rows="4"></textarea>
+
+    <input type="hidden" name="form_id" value="pawnshop_form">
+
+    <button type="submit">Отправить</button>
+    <button type="reset">Очистить</button>
+</form>
+
+</body>
+</html>
